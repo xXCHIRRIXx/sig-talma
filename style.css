@@ -1,0 +1,363 @@
+    /* 1. REGISTRO DE FUENTE LOCAL - RIGHTEOUS */
+    @font-face {
+        font-family: 'Righteous';
+        src: url('fonts/Righteous/Righteous-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    /* 2. VARIABLES DE COLOR CORPORATIVO TALMA */
+    :root {
+        --bg-white: #ffffff;
+        --talma-blue: #005bb7;
+        --talma-green: #28a745;
+        --talma-dark-green: #1e7e34;
+        --dark-text: #1a2b3c;
+        --glass-green: rgba(40, 167, 69, 0.08); 
+        --border: rgba(0, 91, 183, 0.15);
+    }
+
+    /* 3. RESET Y CONFIGURACIÓN GLOBAL */
+    * { 
+        margin: 0; 
+        padding: 0; 
+        box-sizing: border-box; 
+        font-family: 'Righteous', cursive; 
+    }
+
+    body {
+        background-color: var(--bg-white);
+        color: var(--dark-text);
+        overflow-x: hidden; /* Esto oculta la barra, tu JS hace el movimiento */
+    }
+
+    /* 4. COMPONENTES DE NAVEGACIÓN */
+    .progress-bar {
+        position: fixed;
+        top: 0; left: 0; height: 6px;
+        background: linear-gradient(90deg, var(--talma-blue), var(--talma-green));
+        width: 0%; z-index: 1000;
+        transition: width 0.2s ease;
+    }
+
+    /* --- CORRECCIÓN CLAVE AQUÍ --- */
+    .horizontal-scroll {
+        display: flex;
+        width: max-content; /* Se ajusta automáticamente si tienes 7, 10 o 20 diapositivas */
+        height: 100vh;
+    }
+
+    .slide {
+        width: 100vw;
+        height: 100vh;
+        flex-shrink: 0; /* MAGIA: Evita que flexbox aplaste la tarjeta */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 5vw;
+    }
+    /* ----------------------------- */
+
+    /* 5. TARJETAS (ESTILO VERDE CLARO UNIFICADO) */
+    .glass-card {
+        background: var(--glass-green);
+        border: 2px solid var(--border);
+        border-radius: 30px;
+        padding: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+        backdrop-filter: blur(10px);
+    }
+
+    .main-hero {
+        text-align: center;
+        max-width: 900px;
+    }
+
+    .content-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        width: 100%;
+        max-width: 1200px;
+        height: 80vh;
+        gap: 40px; /* Reducimos el espacio entre el texto y la tarjeta */
+        margin: 0 auto;
+    }
+
+    /* 6. BLOQUE DE JUSTIFICACIÓN */
+    .text-reveal {
+        min-width: 380px;
+        max-width: 420px;
+        padding-right: 50px;
+    }
+
+    .justification-box {
+        margin-top: 15px;
+        padding: 18px;
+        background: rgba(40, 167, 69, 0.05); 
+        border-left: 6px solid var(--talma-green);
+        border-radius: 12px;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        color: #333;
+        font-weight: normal;
+    }
+
+    .justification-box strong {
+        color: var(--talma-blue);
+        display: block;
+        margin-bottom: 8px;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    /* 7. CONTENEDORES DE MEDIOS E IMÁGENES */
+    .media-container {
+        flex: 1; 
+        height: 100%; 
+        max-height: 75vh;
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        overflow: hidden;
+    }
+
+    /* Esto asegura que la grilla de alcance no tenga espacios vacíos innecesarios */
+    .media-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Dos columnas */
+        gap: 20px;
+        width: 100%;
+        max-width: 600px; /* Evita que se estire demasiado hacia los lados */
+    }
+
+    .media-grid { 
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 20px; 
+    }
+
+    /* 1. ESTILO BASE DE LAS TARJETAS (MEDIA-ITEM) */
+    .media-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 25px 15px; /* Más aire vertical para que no se vea apretado */
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 20px;
+        border: 1px solid rgba(0, 91, 183, 0.1);
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer; /* Indica que se puede hacer clic para el modal */
+        text-align: center;
+    }
+
+    /* 2. BORDES SUPERIORES DE COLORES (ESTILO OBJETIVOS DEL SIG) */
+    /* Usamos colores alineados a la excelencia, seguridad y ambiente de TALMA */
+    .pilar-excelencia { border-top: 5px solid #ffc107 !important; } /* Dorado/Oro */
+    .pilar-seguridad { border-top: 5px solid var(--talma-blue) !important; } /* Azul Corporativo */
+    .pilar-sostenible { border-top: 5px solid var(--talma-green) !important; } /* Verde Ambiental */
+    .pilar-mejora { border-top: 5px solid #6f42c1 !important; } /* Púrpura Innovación */
+
+    /* 3. EFECTOS INTERACTIVOS (HOVER Y CLICK) */
+    .media-item:hover {
+        transform: translateY(-8px); /* Elevación un poco más pronunciada */
+        background: #ffffff;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .media-item:active {
+        transform: scale(0.95); /* Efecto de pulsación al presionar */
+    }
+
+    /* 4. CONTENIDO INTERNO (ICONOS Y TEXTO) */
+    .media-item div {
+        font-size: 2.8rem; /* Tamaño optimizado para llenar el espacio */
+        margin-bottom: 12px;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); /* Sombra suave al icono */
+    }
+
+    .media-item p {
+        font-size: 1rem;
+        color: var(--talma-blue);
+        font-weight: bold;
+        text-transform: uppercase; /* Estilo más profesional para títulos */
+        letter-spacing: 0.5px;
+    }
+
+    .media-item h1 {
+        font-size: 3rem; /* Tamaño compacto para los KPIs */
+        margin: 5px 0;
+        line-height: 1;
+        transition: color 0.3s ease;
+    }
+
+    /* Efecto opcional: al pasar el mouse, el número resalta un poco */
+    .media-item:hover h1 {
+        transform: scale(1.1);
+    }
+
+    /* 5. AJUSTE PARA EL MODAL (POR SI ACASO) */
+    .glass-card {
+        background: white;
+        border: 2px solid var(--talma-blue);
+        padding: 40px;
+        max-width: 500px;
+        border-radius: 25px;
+    }
+
+    #modal-info {
+        display: none; /* Se activa por JS */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .modal-content {
+        max-width: 500px;
+        width: 90%;
+        padding: 40px;
+        background: white !important; /* Fondo sólido para legibilidad */
+        border: 2px solid var(--talma-blue);
+        position: relative;
+    }
+
+    .clickable { 
+        cursor: zoom-in; 
+    }
+
+    img {
+        max-width: 100%; 
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 20px;
+        transition: transform 0.4s ease, border-color 0.3s;
+    }
+
+    img:hover { 
+        transform: scale(1.02); 
+    }
+
+    /* 8. LIGHTBOX (MODAL DE ZOOM) */
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0; top: 0; width: 100%; height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(15px);
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .lightbox-content {
+        max-width: 90%;
+        max-height: 80vh;
+        border-radius: 15px;
+        animation: zoom 0.3s ease-out;
+    }
+
+    @keyframes zoom { 
+        from {transform: scale(0.8); opacity: 0;} 
+        to {transform: scale(1); opacity: 1;} 
+    }
+
+    .close-lightbox {
+        position: absolute;
+        top: 30px; right: 50px;
+        color: white; 
+        font-size: 60px; 
+        font-weight: bold; 
+        cursor: pointer;
+    }
+
+    #caption {
+        color: white; 
+        margin-top: 20px; 
+        font-family: 'Righteous', cursive;
+        font-size: 1.5rem;
+    }
+
+    /* 9. TIPOGRAFÍAS Y TEXTOS ESPECÍFICOS */
+    h1 { 
+        font-size: 5.5rem; 
+        color: var(--dark-text); 
+        margin: 10px 0; 
+        line-height: 1;
+        letter-spacing: -1px;
+    }
+
+    h2 { 
+        font-size: 2.8rem; 
+        color: var(--talma-blue); 
+        margin-bottom: 15px; 
+    }
+
+    .accent-blue { 
+        color: var(--talma-blue); 
+    }
+
+    .tag { 
+        background: var(--talma-dark-green); 
+        color: white; 
+        padding: 10px 20px; 
+        border-radius: 10px; 
+        font-size: 0.9rem; 
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .label { 
+        color: var(--talma-green); 
+        font-size: 0.9rem; 
+        margin-bottom: 10px; 
+        text-transform: uppercase; 
+    }
+
+    .scroll-hint { 
+        margin-top: 30px; 
+        color: var(--talma-dark-green); 
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .nombres { 
+        padding-top: 25px;
+        font-size: 1.3rem;
+        color: #444;
+    }
+
+    .nombres p {
+        margin-bottom: 5px;
+    }
+
+    /* 10. BOTÓN DE POLÍTICAS (ANIMADO Y ELEGANTE) */
+    .btn-detail {
+        margin-top: 25px;
+        padding: 15px 30px;
+        background: linear-gradient(45deg, var(--talma-blue), #003a75);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-family: 'Righteous', cursive;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+
+    .btn-detail:hover {
+        transform: translateY(-3px) scale(1.05); /* Efecto de levitar */
+        background: linear-gradient(45deg, var(--talma-green), var(--talma-dark-green));
+        box-shadow: 0 12px 20px rgba(40, 167, 69, 0.3);
+    }
+
+    .imgtalma {
+    /* La imagen ocupará el 90% del ancho del contenedor .media-container */
+    width: 90%; 
+    height: auto;
+    object-fit: cover; /* Mantiene la proporción cubriendo el área */
+    border-radius: 20px; /* Asegura bordes redondeados */
+}

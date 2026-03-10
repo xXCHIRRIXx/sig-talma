@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIG TALMA | Portafolio de Ingeniería</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="progress-bar"></div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="img-ampliada">
+        <div id="caption"></div>
+    </div>
+
+    <main class="horizontal-scroll">
+        
+        <section class="slide">
+            <div class="glass-card main-hero">
+                <span class="tag">Proyecto Ingeniería de Sistemas</span>
+                <h1>SIG <span class="accent-blue">TALMA</span></h1>
+                <p>Gestión Integrada: Calidad, Seguridad y Sostenibilidad Ambiental.</p>
+                <div class="nombres">
+                    <p>Angela Mogollón Cifuentes</p>
+                    <p>Juan David Castro Castro</p>
+                    <p>Gildardo Andrés Betancourt Vargas</p>
+                    <p>Hamilthon Ortega</p>
+                </div>
+                <div class="scroll-hint">Usa la rueda del ratón para navegar →</div>
+            </div>
+        </section>
+        
+       <section class="slide">
+            <div class="content-wrapper">
+                <div class="text-reveal">
+                    <span class="tag">Propósito Estratégico</span>
+                    <h2>Nuestra Esencia</h2>
+                    
+                    <div class="justification-box">
+                        <strong>Misión:</strong> 
+                        Brindar servicios aeroportuarios seguros, rápidos y eficientes con un equipo humano comprometido, superando los estándares de calidad y seguridad del sector aeronáutico.
+                    </div>
+
+                    <div class="justification-box">
+                        <strong>Visión:</strong> 
+                        Ser el socio estratégico preferido en servicios de asistencia en tierra en Latinoamérica, reconocidos por nuestra innovación tecnológica y excelencia en la gestión integrada.
+                    </div>
+                </div>
+
+                <div class="media-container glass-card">
+                    <img src="img/Talma.jpg" alt="Operaciones de carga de Talma" class="imgtalma clickable">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="content-wrapper">
+                <div class="text-reveal">
+                    <span class="tag">Estrategia</span>
+                    <h2>01. Política del SIG</h2>
+                    <div class="justification-box">
+                        <strong>Compromiso:</strong> En TALMA, garantizamos operaciones seguras y sostenibles mediante el cumplimiento normativo y la gestión de riesgos.
+                    </div>
+                    <button class="btn-detail" onclick="window.open('politicas.pdf', '_blank')">
+                        Ver Documento PDF
+                    </button>
+                </div>
+
+        <div class="media-grid glass-card">
+            <div class="media-item pilar-excelencia" onclick="abrirModal('Excelencia', 'En TALMA, la excelencia operativa significa estandarizar procesos para garantizar la puntualidad y eficiencia en cada servicio de Ground Handling, superando las expectativas del cliente.')">
+                <div>🏆</div>
+                <p>Excelencia</p>
+            </div>
+            <div class="media-item pilar-seguridad" onclick="abrirModal('Seguridad', 'La seguridad es innegociable. Implementamos protocolos SMS (Safety Management System) para prevenir incidentes en plataforma y asegurar la integridad de nuestro personal y las aeronaves.')">
+                <div>🛡️</div>
+                <p>Seguridad</p>
+            </div>
+            <div class="media-item pilar-sostenible" onclick="abrirModal('Sostenible', 'Nuestro compromiso ambiental incluye la gestión de residuos peligrosos del mantenimiento GSE y la optimización de recursos para reducir la huella de carbono aeroportuaria.')">
+                <div>🍃</div>
+                <p>Sostenible</p>
+            </div>
+            <div class="media-item pilar-mejora" onclick="abrirModal('Mejora', 'Basados en el ciclo PHVA, evaluamos constantemente nuestros indicadores del SIG para adaptar nuestras operaciones a las nuevas tecnologías de la Industria 4.0.')">
+                <div>📈</div>
+                <p>Mejora</p>
+            </div>
+        </div>
+
+        <div id="modal-info" class="lightbox" style="display: none;">
+            <span class="close-lightbox" onclick="cerrarModal()">&times;</span>
+            <div class="glass-card" style="max-width: 500px; text-align: center; color: var(--dark-text);">
+                <h2 id="modal-titulo" style="margin-bottom: 20px;"></h2>
+                <p id="modal-cuerpo" style="font-size: 1.2rem; line-height: 1.6; font-family: sans-serif;"></p>
+            </div>
+        </div>
+
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="content-wrapper">
+                <div class="text-reveal">
+                    <span class="tag">Cobertura</span>
+                    <h2>02. Alcance del SIG</h2>
+                    <div class="justification-box">
+                        <strong>Ámbito:</strong> Servicios de Ground Handling y mantenimiento preventivo/correctivo de equipos GSE en rampa.
+                    </div>
+                </div>
+
+                <div class="media-grid glass-card">
+                    <div class="media-item pilar-mejora" onclick="abrirModal('Mantenimiento GSE', 'El alcance incluye el mantenimiento preventivo y correctivo de Equipos de Apoyo Terrestre (GSE) en los talleres nacionales. Se gestionan activos críticos como remolcadores, plantas eléctricas y escaleras.')">
+                        <div>🛠️</div>
+                        <p>Mantenimiento</p>
+                    </div>
+
+                    <div class="media-item pilar-seguridad" onclick="abrirModal('Servicios en Rampa', 'Abarca servicios misionales de Ground Handling: carga y descarga de equipaje, limpieza de aeronaves, remolque y servicios de agua, garantizando la seguridad operacional.')">
+                        <div>✈️</div>
+                        <p>Servicios</p>
+                    </div>
+
+                    <div class="media-item pilar-excelencia" onclick="abrirModal('Cobertura Nacional', 'Operamos en los principales aeropuertos de Colombia, estandarizando los procesos del SIG en diversas geografías para mantener la uniformidad en la calidad del servicio.')">
+                        <div>📍</div>
+                        <p>Ubicación</p>
+                    </div>
+
+                    <div class="media-item pilar-sostenible" onclick="abrirModal('Certificaciones ISO', 'El Sistema de Gestión Integrado está certificado bajo ISO 9001, ISO 14001 e ISO 45001, asegurando el cumplimiento legal y la mejora continua en todas nuestras bases.')">
+                        <div>📜</div>
+                        <p>Certificación</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="slide">
+            <div class="content-wrapper">
+                <div class="text-reveal">
+                    <span class="tag">KPIs</span>
+                    <h2>03. Objetivos del SIG</h2>
+                    <div class="justification-box">
+                        <strong>Metas:</strong> Indicadores clave alineados a la sostenibilidad ambiental y la satisfacción operacional.
+                    </div>
+                </div>
+
+                <div class="media-grid glass-card">
+            <div class="media-item pilar-seguridad" onclick="abrirModal('Satisfacción del Cliente', 'Nuestra meta del 95% se mide a través de encuestas trimestrales y el cumplimiento de los SLAs de las aerolíneas. En el último semestre, la optimización de procesos de Ground Handling ha elevado la confianza del cliente gracias a la reducción de tiempos de espera.')">
+                <span class="label">Cliente</span>
+                <h1 style="color: var(--talma-blue);">95%</h1>
+                <p>Satisfacción</p>
+            </div>
+
+            <div class="media-item pilar-sostenible" onclick="abrirModal('Gestión de Residuos', 'Este indicador busca reducir la generación de residuos peligrosos (aceites y químicos) en los talleres de mantenimiento GSE. Implementamos un programa de economía circular que permite la disposición final certificada bajo la norma ISO 14001.')">
+                <span class="label">Ambiente</span>
+                <h1 style="color: var(--talma-green);">📉</h1>
+                <p>Menos Residuos</p>
+            </div>
+
+            <div class="media-item pilar-seguridad" onclick="abrirModal('Cero Accidentes', 'El objetivo principal es mantener el índice de frecuencia de accidentes en 0. Esto se logra mediante la inspección diaria de plataforma y la capacitación obligatoria en SMS (Safety Management System) para todo el personal operativo de TALMA.')">
+                <span class="label">Seguridad</span>
+                <h1 style="color: var(--talma-blue);">0</h1>
+                <p>Incidentes</p>
+            </div>
+
+            <div class="media-item pilar-sostenible" onclick="abrirModal('Consumo de Agua', 'Buscamos reducir el consumo hídrico en un 10% mediante la instalación de sistemas de captación de agua lluvia y la tecnificación del lavado de equipos de apoyo terrestre (GSE), optimizando el uso del recurso en los aeropuertos.')">
+                <span class="label">Agua</span>
+                <h1 style="color: var(--talma-green);">-10%</h1>
+                <p>Consumo</p>
+            </div>
+        </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="content-wrapper">
+                <div class="text-reveal">
+                    <h2>04. Entradas y Salidas</h2>
+                    <div class="justification-box">
+                        <strong>Justificación:</strong> Permite identificar la transformación de recursos en servicios de asistencia en tierra, asegurando que cada proceso agregue valor y minimice desperdicios operativos.
+                    </div>
+                </div>
+                <div class="media-container glass-card clickable">
+                    <img src="img/Presentación Proyecto Creativo Animada Colorida.png" alt="Diagrama de Entradas y Salidas" onerror="this.src='https://via.placeholder.com/800x500?text=Entradas+y+Salidas'">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="content-wrapper">
+                <div class="text-reveal">
+                    <h2>05. Contexto Estratégico</h2>
+                    <div class="justification-box">
+                        <strong>Justificación:</strong> El análisis PESTEL y de Partes Interesadas garantiza que TALMA anticipe riesgos externos (legales/ambientales) y cumpla con las expectativas de clientes y entes reguladores.
+                    </div>
+                </div>
+                <div class="media-grid glass-card">
+                    <div class="media-item clickable">
+                        <span class="label">Macroentorno (PESTEL)</span>
+                        <img src="img/pestel.png" alt="Matriz PESTEL" onerror="this.src='https://via.placeholder.com/400x500?text=Matriz+PESTEL'">
+                    </div>
+                    <div class="media-item clickable">
+                        <span class="label">Stakeholders</span>
+                        <img src="img/stake.png" alt="Partes Interesadas" onerror="this.src='https://via.placeholder.com/400x500?text=Partes+Interesadas'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="content-wrapper">
+                <div class="text-reveal">
+                    <h2>06. Matriz de Roles</h2>
+                    <div class="justification-box">
+                        <strong>Justificación:</strong> Define niveles de autoridad y responsabilidad, eliminando ambigüedades en la toma de decisiones y garantizando el liderazgo dentro del Sistema de Gestión.
+                    </div>
+                </div>
+                <div class="media-container glass-card clickable">
+                    <img src="img/roles.png" alt="Matriz de Roles y Responsabilidades" onerror="this.src='https://via.placeholder.com/800x500?text=Matriz+de+Roles'">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="content-wrapper">
+                <div class="text-reveal">
+                    <h2>07. Mapa de Procesos</h2>
+                    <div class="justification-box">
+                        <strong>Justificación:</strong> Ofrece una visión holística de la organización, permitiendo la integración de las normas ISO y la mejora continua mediante la interrelación de procesos misionales.
+                    </div>
+                </div>
+                <div class="media-container glass-card clickable">
+                    <img src="img/procesos.png" alt="Mapa de Procesos Corporativo" onerror="this.src='https://via.placeholder.com/800x500?text=Mapa+de+Procesos'">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="content-wrapper">
+                <div class="text-reveal">
+                    <h2>08. Gestión de Riesgos</h2>
+                    <div class="justification-box">
+                        <strong>Justificación:</strong> El Mapa de Calor prioriza los riesgos críticos que podrían afectar la seguridad aérea y la satisfacción del cliente, facilitando la implementación de controles preventivos.
+                    </div>
+                </div>
+                <div class="media-container glass-card clickable">
+                    <img src="img/Mapa de Calor.jpeg" alt="Matriz de Riesgos y Mapa de Calor" onerror="this.src='https://via.placeholder.com/800x500?text=Mapa+de+Calor'">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="content-wrapper">
+                <div class="text-reveal">
+                    <h2>09. Matriz Ambiental</h2>
+                    <div class="justification-box">
+                        <strong>Justificación:</strong> Fundamental para mitigar los impactos negativos derivados del mantenimiento GSE (aceites, emisiones), asegurando el cumplimiento de la norma ISO 14001.
+                    </div>
+                </div>
+                <div class="media-grid glass-card">
+                    <div class="media-item clickable">
+                        <span class="label">Aspectos Técnicos</span>
+                        <img src="img/riegos 1.png" alt="Matriz de Aspectos Ambientales" onerror="this.src='https://via.placeholder.com/400x500?text=Aspectos'">
+                    </div>
+                    <div class="media-item clickable">
+                        <span class="label">Evaluación de Impactos</span>
+                        <img src="img/riegos 2.png" alt="Evaluación de Significancia" onerror="this.src='https://via.placeholder.com/400x500?text=Impactos'">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
